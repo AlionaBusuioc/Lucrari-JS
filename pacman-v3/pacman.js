@@ -2,6 +2,8 @@
 //0 -empty
 //1 - banan 1
 //3 - banan 3
+//4 - bomb;
+//5 - wall;
 //6 - meanion
 //9 - pacman
 var pac_r = 4;
@@ -37,8 +39,42 @@ function action(){
    case 40: moveDown(); break;
  }
 }
+function randBombs(amount){
+  amount = amount || 5; //init
+  while(amount--){//-->for()
+  var r_r = randCoord();
+  var r_c = randCoord();
+  map[r_r][r_c] = 4;
+}
+}
+// + randomBananas()
+//randBombs();
+//randBombs(2);
+function randWalls(amount){
+  amount = amount || 5; //init
+  while(amount--){//-->for()
+  var r_r = randCoord();
+  var r_c = randCoord();
+  var dir = Math.random()>0.5?'vt':'hz';
+  for(var l=0; l<randCoord()/2; l++){
+
+    if(dir=='vt'){
+        if(r_r+l>9) break;
+  map[r_r+l][r_c] = 5;
+}else{
+  if(c_r+l>9) break;
+    map[r_r][r_c+l] = 5;
+}
+}
+}
+}
+randWalls(3);
+function randCoord(){
+  return Math.ceil(Math.random()*9);
+}
+
 function moveRight(){
-  if(pac_c<9){
+  if(pac_c<9&&map[pac_r][pac_c+1]!=5){
   map[pac_r][pac_c] = 0; //delete from current location
   pac_c++; //step to right
   checkBomb();
@@ -54,7 +90,7 @@ function moveRight(){
   showMap();
 }
 function moveLeft(){
-  if(pac_c>0){
+  if(pac_c>0&&map[pac_r][pac_c-1]!=5){
   map[pac_r][pac_c] = 0; //delete from current location
   pac_c--; //step to left
   checkBomb();
@@ -63,7 +99,7 @@ function moveLeft(){
   showMap();
 }
 function moveUp(){
-  if(pac_r>0){
+  if(pac_r>0&&map[pac_r-1][pac_c]!=5){
   map[pac_r][pac_c] = 0; //delete from current location
   pac_r--; //step to left
   checkBomb();
@@ -72,7 +108,7 @@ function moveUp(){
   showMap();
 }
 function moveDown(){
-  if(pac_r<9){
+  if(pac_r<9&&map[pac_r+1][pac_c]!=5){
   map[pac_r][pac_c] = 0; //delete from current location
   pac_r++; //step to left
   checkBomb();
@@ -102,6 +138,9 @@ function showMap() {
       }
       if(map[r][c] == 4) {
         div_map.innerHTML += '<div class="square bomb"><div>';
+      }
+      if(map[r][c] == 5) {
+        div_map.innerHTML += '<div class="square wall"><div>';
       }
       if(map[r][c] == 10) { //pacman + explosion
         div_map.innerHTML += '<div class="square pacman"><div class="explosion"></div></div>';

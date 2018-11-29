@@ -35,3 +35,7 @@ body{
   top: -45px;
   left: -45px;
 }
+#map .wall{
+    background-image: url(images/wall.png);
+    background-size: contain;
+}
