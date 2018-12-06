@@ -1,0 +1,39 @@
+<script>
+  var menu = [
+    "Pizza",
+    "Salad",
+    "Soup"
+  ];
+  var menu_prices = [
+    65.00,
+    45.00,
+    25.00
+  ];
+ var option_name = prompt("Numiti optiunea solicitata:? \n1.Pizza, \n2.Salad, \n3.Soup.");
+ function Cost(){
+   if(option_name == 1){
+   alert("Optiunea aleasa 'Pizza', costa 65.00 - o portie");
+ }else if(option_name == 2){
+  alert("Optiunea aleasa 'Salad', costa 45.00 - o portie");
+}else if(option_name == 3){
+      alert("Optiunea aleasa 'Soup', costa 25.00 - o portie");
+  }else{
+     alert("Nu avem asa ceva");
+   }
+}
+ Cost();
+  var quantity = prompt("Cite portii doriti?");
+  var total_Pizza = quantity* menu_prices[0];
+  var total_Salad = quantity* menu_prices[1];
+  var total_Soup = quantity* menu_prices[2];
+  function Total(){
+    if (option_name == 1){
+      alert(total_Pizza);
+    }else if (option_name == 2){
+      alert(total_Salad);
+    }else{
+      alert(total_Soup);
+    }
+  }
+  Total();
+</script>
