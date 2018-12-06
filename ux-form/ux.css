@@ -1,0 +1,10 @@
+#taxi-form{
+  border: 1px solid #777;
+  padding: 30px;
+  display:inline-block;
+  text-align: center;
+}
+#taxi-form table{
+  width: 600px;
+  height: 400px;
+}

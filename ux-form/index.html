@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ux form</title>
+  <link rel="stylesheet" href="ux.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="restoreAddressFrom();">
+  <form id="taxi-form">
+    <table border="1">
+      <tr>
+        <td>
+          <input id="input-address-form" placeholder="from adress" onkeyup="processAdressFrom();">
+          <button type="button" onclick="clearAddressFrom()">X</button>
+        </td>
+        <td>
+          <button type="button">
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <br>
+              <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+          </button>
+        </td>
+        <td><input placeholder="to adress"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <!-- select value (if select.value )-->
+        <td><select id="select-type" onchange="">
+          <option value="1">standart</option>
+          <option value="2">confort</option>
+          <option value="3">vip</option>
+        </select></td>
+        <td></td>
+        <td><select id="">
+          <option value="1">1 Euro</option>
+          <option value="2">3 Euro</option>
+          <option value="3">50 Euro</option>
+        </select></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+<script src="ux.js"></script>
+</body>
+</html>
