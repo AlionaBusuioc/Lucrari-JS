@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="ux.css" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body onload="restoreAdressFrom(); restoreAdressTo();">
+
+
+  <form id="taxi-form">
+    <table border="1">
+      <tr>
+        <td><input id="input-adress-from" type="text" placeholder="from adress" onkeyup="processAdressFrom();">
+          <button type="button" onclick="clearAdressForm()"><i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </td>
+        <td>
+          <button type="button" onclick="switchInputs()">
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <br>
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+          </button>
+        </td>
+        <td><input id="input-adress-to" type="text" placeholder="to adress" onkeyup="processAdressTo();">
+          <button type="button" onclick="clearAdressTo()"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <select id="select-type" onchange="selectTaxiType();">
+            <option value="1">standart</option>
+            <option value="2">confort</option>
+            <option value="3">vip</option>
+          </select>
+        </td>
+        <td>
+          <select name="" id="select-price" disabled="">
+            <option value="1">1Euro</option>
+            <option value="2">2Euro</option>
+            <option value="3">50Euro</option>
+          </select>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+
+
+  <script type="text/javascript" src="ux.js">
+  </script>
+</body>
+
+</html>
