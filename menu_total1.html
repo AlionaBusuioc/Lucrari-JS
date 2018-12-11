@@ -9,11 +9,6 @@
     45.00,
     25.00
   ];
-// var available_quantity = [
-// 20,
-// 10,
-// 3
-// ];
 var quantity_pizza = 20;
 var quantity_salad = 10;
 var quantity_soup = 3;
@@ -37,28 +32,12 @@ var quantity_soup = 3;
   function NotAvailable(){
     alert("Din pacate nu avem atitea portii");
   }
-function TotalPizza(){
-  if (option_name == 1 && quantity <= quantity_pizza){
-    alert(total_Pizza);
+function Total(){
+  if (option_name == 1 && quantity <= quantity_pizza || option_name == 2 && quantity <= quantity_salad ||option_name == 3 && quantity <= quantity_soup){
+    alert(total_Pizza || total_Salad || total_Soup);
   }else{
   NotAvailable();
 }
 }
-TotalPizza();
-function TotalSalad(){
-  if (option_name == 2 && quantity <= quantity_salad){
-    alert(total_Salad);
-  }else{
-  NotAvailable();
-}
-}
-TotalSalad();
-function TotalSoup(){
-  if (option_name == 3 && quantity <= quantity_soup){
-    alert(total_Salad);
-  }else{
-  NotAvailable();
-}
-}
-TotalSoup();
+Total();
 </script>
